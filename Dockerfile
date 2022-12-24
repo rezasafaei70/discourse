@@ -3,7 +3,7 @@ FROM rails
 WORKDIR /usr/src/app
 
 ENV DISCOURSE_VERSION v2.9.0.beta14
-RUN apt update && apt install -y git 
+# RUN apt update && apt install -y git 
 RUN git clone  https://github.com/discourse/discourse.git /usr/src/app \
   && bundle install --deployment --without test --without development
 
