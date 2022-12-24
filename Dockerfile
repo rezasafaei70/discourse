@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 ENV DISCOURSE_VERSION v2.9.0.beta14
 
-RUN curl -L https://github.com/discourse/discourse/archive/v${DISCOURSE_VERSION}.tar.gz \
+RUN curl -L https://github.com/discourse/discourse/archive/refs/tags/v2.9.0.beta14.zip \
   | tar -xz -C /usr/src/app --strip-components 1 \
   && bundle install --deployment --without test --without development
 
