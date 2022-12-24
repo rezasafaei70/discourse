@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 ENV DISCOURSE_VERSION v2.9.0.beta14
 RUN  apt-get update \
-  && apt install -y unzip \
+  && apt install -y zip unzip \
   && apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/*
 
