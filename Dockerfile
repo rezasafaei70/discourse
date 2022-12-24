@@ -3,8 +3,9 @@ FROM rails
 WORKDIR /usr/src/app
 
 ENV DISCOURSE_VERSION v2.9.0.beta14
-# RUN apt update && apt install -y git 
-RUN git clone  https://github.com/discourse/discourse.git /usr/src/app \
+
+RUN curl -L https://github.com/discourse/discourse/archive/v${DISCOURSE_VERSION}.tar.gz \
+  | tar -xz -C /usr/src/app --strip-components 1 \
   && bundle install --deployment --without test --without development
 
 RUN apt-get update && apt-get install -y --no-install-recommends imagemagick libxml2 \
